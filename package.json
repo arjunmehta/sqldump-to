@@ -1,0 +1,22 @@
+{
+  "name": "wikibq",
+  "version": "1.0.0",
+  "description": "Stream sql dump to newline delimited json",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arjun Mehta",
+  "license": "MIT",
+  "dependencies": {
+    "heartbeats": "^5.0.1",
+    "json5": "^2.1.0",
+    "split": "^1.0.1",
+    "yargs": "^13.2.4"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3"
+  }
+}
