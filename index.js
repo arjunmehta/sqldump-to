@@ -1,4 +1,4 @@
-const MultiWriteable = require('./multi-writable');
+const MultiWriteable = require('./lib/multi-writable');
 
 const writeStream = new MultiWriteable({
   workerConfig: {
