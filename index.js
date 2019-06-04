@@ -1,14 +1,18 @@
+const yargs = require('yargs');
 const MultiWriteable = require('./lib/multi-writable');
 
+const { argv } = yargs
+  .option('dir', { alias: 'd' })
+  .option('workers', { alias: 'w' });
+
 const writeStream = new MultiWriteable({
-  workerConfig: {
-    outputDir: './output',
-  },
+  numWorkers: argv.workers,
+  workerConfig: { outputDir: argv.dir },
 });
 
 process
   .stdin
   .pipe(writeStream)
-  .on('close', () => {
+  .on('finish', () => {
     process.exit();
   });
