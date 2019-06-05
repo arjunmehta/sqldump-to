@@ -6,21 +6,22 @@ const suite = new Benchmark.Suite();
 
 const fileContent = fs.readFileSync(path.resolve(__dirname, 'fixture.sql'));
 const bufDelimeter = Buffer.from('),(');
-const bufDelimeterLength = bufDelimeter.length;
 const createTable = Buffer.from('CREATE TABLE ');
 const insertInto = Buffer.from('INSERT INTO ');
 const values = Buffer.from(' VALUES ');
+const doneCommand = Buffer.from(';');
 const bracketOpen = Buffer.from('(');
 const bracketClose = Buffer.from(')');
-
 const stringOpener = Buffer.from('\'');
 const escapeChar = Buffer.from('\\');
 
+const doneCommandOctet = doneCommand[0];
 const stringOpenerOctet = stringOpener[0];
 const escapeCharOctet = escapeChar[0];
 const bracketOpenOctet = bracketOpen[0];
 const bracketCloseOctet = bracketClose[0];
 
+const bufDelimeterLength = bufDelimeter.length;
 
 // add tests
 suite
@@ -92,6 +93,9 @@ suite
                 // console.log({ sliced: sliced.toString(), startPos, endPos });
               }
             }
+            break;
+
+          case doneCommandOctet:
             break;
 
           default:
