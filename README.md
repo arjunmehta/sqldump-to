@@ -10,7 +10,7 @@ npm install -g sqldump-to
 ```
 
 ### Usage
-To use, simply pipe an sql dump read stream to the tool. The schema will be read and the output will be newline delimited JSON, with object keys matching the column names of your tables.
+To use, simply pipe a SQL dump read stream to the tool. The schema will be read and the output will be newline delimited JSON, with object keys matching the column names of your tables.
 
 #### Examples
 ```bash
