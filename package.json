@@ -4,7 +4,7 @@
   "description": "Stream sql dump to newline delimited json",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./test/test"
   },
   "author": "Arjun Mehta",
   "license": "MIT",
@@ -18,6 +18,7 @@
     "benchmark": "^2.1.4",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.17.3"
+    "eslint-plugin-import": "^2.17.3",
+    "mocha": "^6.1.4"
   }
 }
