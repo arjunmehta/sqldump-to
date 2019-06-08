@@ -5,7 +5,7 @@ const MultiWriteable = require('../lib/multi-writable');
 const COMMAND_EXEC_BUFF = Buffer.from(';');
 
 
-describe('MultiWriteable stream', () => {
+describe('MultiWriteable stream buffer control', () => {
   it('should be an object', () => {
     const writable = new MultiWriteable();
     assert.equal(typeof writable, 'object');
