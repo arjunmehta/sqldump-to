@@ -6,11 +6,13 @@
   "scripts": {
     "test": "mocha ./test/test"
   },
+  "engines": ">=7.6",
   "author": "Arjun Mehta",
   "license": "MIT",
   "dependencies": {
     "heartbeats": "^5.0.1",
     "json5": "^2.1.0",
+    "mkdirp": "^0.5.1",
     "split2": "^3.1.1",
     "yargs": "^13.2.4"
   },
