@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha ./test/test"
   },
-  "engines": ">=7.6",
+  "engines": ">=7.5",
   "author": "Arjun Mehta",
   "license": "MIT",
   "dependencies": {
