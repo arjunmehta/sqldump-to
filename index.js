@@ -1,4 +1,3 @@
-const os = require('os');
 const yargs = require('yargs');
 const MultiWriteable = require('./lib/multi-writable');
 
@@ -8,7 +7,7 @@ const { argv } = yargs
 
 
 const writeStream = new MultiWriteable({
-  numWorkers: argv.workers || Math.round(os.cpus().length / 2) - 1 || 1,
+  numWorkers: argv.dir ? argv.workers || 1 : 1,
   workerConfig: { outputDir: argv.dir },
 });
 
