@@ -9,12 +9,14 @@ const MultiWriteable = require('./lib/multi-writable');
 
 const { argv } = yargs
   .option('dir-output', { alias: 'd' })
-  .option('workers', { alias: 'w' });
+  .option('workers', { alias: 'w' })
+  .option('schema', { alias: 's' });
 
 
 const writeStream = new MultiWriteable({
   numWorkers: argv['dir-output'] ? argv.workers || 1 : 1,
-  workerConfig: { outputDir: argv['dir-output'] },
+  outputDir: argv['dir-output'],
+  schemaFormat: argv.schema,
 });
 
 
