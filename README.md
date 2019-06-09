@@ -1,7 +1,8 @@
 # sqldump-to
 [![Build Status](https://travis-ci.org/arjunmehta/sqldump-to.svg?branch=master)](https://travis-ci.org/arjunmehta/sqldump-to)
 
-This stdin stream compatible command line tool takes a SQL dump stream and converts it to newline delimited JSON. In the future this module may support other output formats and have additional features ([with your help](https://github.com/arjunmehta/sqldump-to/issues)).
+This stdin stream compatible command line tool takes a SQL dump stream and converts it to newline delimited JSON. **Currently this tool can only process dump files for individual tables.** In the future this module may support other output formats and have additional features ([with your help](https://github.com/arjunmehta/sqldump-to/issues)).
+
 
 ## Get Started
 ### Installation
