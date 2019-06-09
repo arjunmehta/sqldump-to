@@ -1,3 +1,9 @@
+#!/usr/bin/env node
+
+// Copyright (c) 2019 Arjun Mehta
+// MIT License
+
+
 const yargs = require('yargs');
 const MultiWriteable = require('./lib/multi-writable');
 

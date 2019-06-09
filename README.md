@@ -69,5 +69,5 @@ cat tablename.sql | sqldump-to -d ./output -s standard
 ## License
 ```
 The MIT License (MIT)
-Copyright (c) 2015 Arjun Mehta
+Copyright (c) 2019 Arjun Mehta
 ```
