@@ -1,10 +1,13 @@
 {
-  "name": "wikibq",
+  "name": "sqldump-to",
   "version": "1.0.0",
   "description": "Stream sql dump to newline delimited json",
   "main": "index.js",
   "scripts": {
     "test": "mocha ./test/test"
+  },
+  "bin": {
+    "sqldump-to": "cli.js"
   },
   "engines": ">=7.5",
   "author": "Arjun Mehta",
