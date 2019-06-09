@@ -51,14 +51,14 @@ cat tablename.sql | sqldump-to -d ./output -w 2
 Output the detected schema as JSON to a file. Filename will be `$tablename_schema.json`.
 
 **`schema format`** may be one of:
-- **default** (MySQL)
+- **default** (embedded schema, eg. MySQL, PostgreSQL)
 - **standard**  (Standard SQL)
 
 If `output-dir` is not set, the schema file will be written to current directory. Otherwise will be writted to the directory specified in `output-dir`.
 
 ```bash
 # Output to stdout
-# Write MySQL schema to ./tablename_schema.json
+# Write embedded schema to ./tablename_schema.json
 cat tablename.sql | sqldump-to -s
 ```
 ```bash
