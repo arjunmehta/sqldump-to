@@ -17,6 +17,7 @@ const writeStream = new MultiWriteable({
   workerConfig: { outputDir: argv['dir-output'] },
 });
 
+
 process
   .stdin
   .pipe(writeStream)
