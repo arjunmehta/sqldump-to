@@ -21,8 +21,8 @@ describe('SQLBuffer stream buffer control', () => {
     const end = buffer.skipToEndOfCommand();
 
     assert.equal(end[0], COMMAND_EXEC_BUFF[0]);
-    assert.equal(buffer[buffer.position - 1], COMMAND_EXEC_BUFF[0]);
-    assert.equal(buffer.position, indexOfFirstSemi + 1);
+    assert.equal(buffer.position - 1, indexOfFirstSemi);
+    assert.equal(buffer.buffer[buffer.position - 1], COMMAND_EXEC_BUFF[0]);
   });
 
   it('should have undefined end of line when no semicolon', () => {
@@ -47,13 +47,14 @@ describe('SQLBuffer stream buffer control', () => {
 
     const partA = buffer.getNextCommandParenSet();
     const partB = buffer.getNextCommandParenSet();
-    const end = buffer.skipToEndOfCommand();
 
     assert.equal(partA.toString(), strA);
     assert.equal(partB.toString(), strB);
-    assert.equal(buffer.position, buffer.length);
+    assert.equal(buffer.position, buffer.length - 1);
 
-    assert.equal(buffer[buffer.position - 1], COMMAND_EXEC_BUFF[0]);
+    const end = buffer.skipToEndOfCommand();
+
+    assert.equal(buffer.buffer[buffer.position - 1], COMMAND_EXEC_BUFF[0]);
     assert.equal(buffer.position, buffer.length);
     assert.equal(end[0], COMMAND_EXEC_BUFF[0]);
   });
@@ -62,7 +63,7 @@ describe('SQLBuffer stream buffer control', () => {
     const buffer = new SQLBuffer();
     const testString = 'Something \'something Something;\' something';
     const testOffset = 5;
-    buffer.add(Buffer.from(testString));
+    buffer.buffer = Buffer.from(testString);
 
     const bufferLength = buffer.length;
     buffer.position = bufferLength;
@@ -71,14 +72,14 @@ describe('SQLBuffer stream buffer control', () => {
     assert.equal(buffer.length, 0);
     assert.equal(buffer.position, 0);
 
-    buffer.add(Buffer.from(testString));
+    buffer.buffer = Buffer.from(testString);
     buffer.position = testOffset;
     buffer.clean();
 
     assert.equal(buffer.length, bufferLength - testOffset);
     assert.equal(buffer.position, 0);
 
-    buffer.add(Buffer.from(testString));
+    buffer.buffer = Buffer.from(testString);
     buffer.clean();
 
     assert.equal(buffer.length, bufferLength);
