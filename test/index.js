@@ -1,1 +1,1 @@
-require('./buffer');
+require('./test');
