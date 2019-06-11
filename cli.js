@@ -5,7 +5,7 @@
 
 
 const yargs = require('yargs');
-const WriteableController = require('./lib/writable-controller');
+const SQLConverterStream = require('./lib/sql-converter-stream');
 
 const { argv } = yargs
   .option('dir-output', { alias: 'd' })
@@ -13,7 +13,7 @@ const { argv } = yargs
   .option('schema', { alias: 's' });
 
 
-const writeStream = new WriteableController({
+const converter = new SQLConverterStream({
   numWorkers: argv['dir-output'] ? parseInt(argv.workers || 1, 10) : 1,
   outputDir: argv['dir-output'],
   schemaFormat: argv.schema,
@@ -22,7 +22,7 @@ const writeStream = new WriteableController({
 
 process
   .stdin
-  .pipe(writeStream)
+  .pipe(converter)
   .on('finish', () => {
     process.exit();
   });
