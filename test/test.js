@@ -59,6 +59,7 @@ describe('SQLBuffer stream buffer control', () => {
     assert.equal(end[0], COMMAND_EXEC_BUFF[0]);
   });
 
+
   it('should clean buffer', () => {
     const buffer = new SQLBuffer();
     const testString = 'Something \'something Something;\' something';
@@ -83,6 +84,30 @@ describe('SQLBuffer stream buffer control', () => {
     buffer.clean();
 
     assert.equal(buffer.length, bufferLength);
+    assert.equal(buffer.position, 0);
+  });
+
+  it('should find sub-buffer index', () => {
+    const buffer = new SQLBuffer();
+    const searchString = 'CREATE TABLE';
+    const testString = `
+        -- something CREATE TABLE
+        Something 'CREATE TABLE \`somethingwrong\` ();'
+        /* blah CREATE TABLE
+         another CREATE TABLE
+        */ CREATE TABLE \`somethingright\` (
+    `;
+
+    const firstIndexOf = testString.indexOf(searchString);
+    const secondIndexOf = testString.indexOf(searchString, firstIndexOf + 1);
+    const thirdIndexOf = testString.indexOf(searchString, secondIndexOf + 1);
+    const fourthIndexOf = testString.indexOf(searchString, thirdIndexOf + 1);
+    const fifthIndexOf = testString.indexOf(searchString, fourthIndexOf + 1);
+
+    buffer.add(Buffer.from(testString));
+
+    assert.equal(buffer.indexOf(Buffer.from(searchString)), firstIndexOf);
+    assert.equal(buffer.indexOf(Buffer.from(searchString), undefined, false), fifthIndexOf);
     assert.equal(buffer.position, 0);
   });
 });
