@@ -5,7 +5,7 @@
 
 
 const yargs = require('yargs');
-const MultiWriteable = require('./lib/multi-writable');
+const WriteableController = require('./lib/writable-controller');
 
 const { argv } = yargs
   .option('dir-output', { alias: 'd' })
@@ -13,8 +13,8 @@ const { argv } = yargs
   .option('schema', { alias: 's' });
 
 
-const writeStream = new MultiWriteable({
-  numWorkers: argv['dir-output'] ? argv.workers || 1 : 1,
+const writeStream = new WriteableController({
+  numWorkers: argv['dir-output'] ? parseInt(argv.workers || 1, 10) : 1,
   outputDir: argv['dir-output'],
   schemaFormat: argv.schema,
 });
