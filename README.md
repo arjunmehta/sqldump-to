@@ -3,12 +3,12 @@
 
 This stdin stream compatible command line tool takes a SQL dump stream and converts it to newline delimited JSON. **Currently this tool can only process dump files for individual tables.** In the future this module may support other output formats and have additional features ([with your help](https://github.com/arjunmehta/sqldump-to/issues)).
 
-- Convert SQL dump to comma separated JSON to import to BigQuery or other tools
-- Output JSON schema to file [Request other export formats](https://github.com/arjunmehta/sqldump-to/issues)
-- Stream-based processor makes efficient use of resources (low memory/disk requirements)
-- Use multiple worker processes to increase performance/consumption
-- stdin/stdout compatible
-- Supports MySQL and MariaDB sql dumps and schema. [Request other dump formats](https://github.com/arjunmehta/sqldump-to/issues)
+- Convert SQL dump to comma separated JSON to import to BigQuery or other tools.
+- Output JSON schema to file. **[Request export format](https://github.com/arjunmehta/sqldump-to/issues)**
+- Stream-based processor makes efficient use of resources (low memory/disk requirements).
+- Use multiple worker processes to increase performance/consumption.
+- stdin/stdout compatible.
+- Supports MySQL and MariaDB SQL dumpfiles and schema. **[Request dump format](https://github.com/arjunmehta/sqldump-to/issues)**
 
 
 ## Get Started
