@@ -35,7 +35,7 @@ pv tablename.sql.gz | gunzip -c | sqldump-to > mydumpfile.json
 curl http://dumps.mydumps.com/tablename.sql.gz | gunzip -c | sqldump-to -d ./output
 ```
 ```bash
-# Output to gzipped json file with a separate schema file form download stream
+# Output to gzipped json file with a separate schema file from a download stream
 curl http://dumps.mydumps.com/tablename.sql.gz | gunzip -c | sqldump-to -s | gzip -c > tablename.json.gz
 ```
 
