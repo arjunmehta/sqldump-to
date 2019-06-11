@@ -34,6 +34,10 @@ pv tablename.sql.gz | gunzip -c | sqldump-to > mydumpfile.json
 # Output to a specific directory from a download stream
 curl http://dumps.mydumps.com/tablename.sql.gz | gunzip -c | sqldump-to -d ./output
 ```
+```bash
+# Output to gzipped json file with a separate schema file form download stream
+curl http://dumps.mydumps.com/tablename.sql.gz | gunzip -c | sqldump-to -s | gzip -c > tablename.json.gz
+```
 
 ## Flags
 ### --dir-output=\<path>, -d
