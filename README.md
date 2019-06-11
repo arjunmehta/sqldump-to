@@ -59,7 +59,7 @@ cat tablename.sql | sqldump-to -d ./output -w 2
 ```
 
 ### --schema, -s
-Output the detected schema as JSON to a file. Filename will be `$tablename_schema.json`.
+Output the detected schema as JSON to a file. Filename will be `{tablename}_schema.json`.
 
 If `output-dir` is not set, the schema file will be written to current directory. Otherwise will be writted to the directory specified in `output-dir`.
 
