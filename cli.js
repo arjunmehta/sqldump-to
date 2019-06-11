@@ -5,7 +5,7 @@
 
 
 const yargs = require('yargs');
-const MultiWriteable = require('./lib/multi-writable');
+const SQLConverterStream = require('./lib/sql-converter-stream');
 
 const { argv } = yargs
   .option('dir-output', { alias: 'd' })
@@ -13,8 +13,8 @@ const { argv } = yargs
   .option('schema', { alias: 's' });
 
 
-const writeStream = new MultiWriteable({
-  numWorkers: argv['dir-output'] ? argv.workers || 1 : 1,
+const converter = new SQLConverterStream({
+  numWorkers: argv['dir-output'] ? parseInt(argv.workers || 1, 10) : 1,
   outputDir: argv['dir-output'],
   schemaFormat: argv.schema,
 });
@@ -22,7 +22,7 @@ const writeStream = new MultiWriteable({
 
 process
   .stdin
-  .pipe(writeStream)
+  .pipe(converter)
   .on('finish', () => {
     process.exit();
   });
