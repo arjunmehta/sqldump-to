@@ -23,7 +23,7 @@ To use, simply pipe a MySQL compatible database dump to the tool. The schema wil
 
 #### Examples
 ```bash
-# Output from dump file newline delimited JSON to stdout
+# Output from dump file to newline delimited JSON on stdout
 cat tablename.sql | sqldump-to
 ```
 ```bash
