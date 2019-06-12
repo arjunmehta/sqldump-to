@@ -78,6 +78,14 @@ cat tablename.sql | sqldump-to -s
 cat tablename.sql | sqldump-to -d ./output -s standard
 ```
 
+### --input=\<dumpfile>, -i
+Specify a filename instead of piping to stdin.
+
+```bash
+# Output newline delimited JSON to ./output/tablename.json
+sqldump-to -i tablename.sql -d ./output
+```
+
 ## License
 ```
 The MIT License (MIT)
