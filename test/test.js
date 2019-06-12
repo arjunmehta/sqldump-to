@@ -48,8 +48,8 @@ describe('SQLBuffer stream buffer control', () => {
     const partA = buffer.getNextCommandParenSet();
     const partB = buffer.getNextCommandParenSet();
 
-    assert.equal(partA.toString(), strA);
-    assert.equal(partB.toString(), strB);
+    assert.equal(partA.toString(), `[${strA}]\n`);
+    assert.equal(partB.toString(), `[${strB}]\n`);
     assert.equal(buffer.position, buffer.length - 1);
 
     const end = buffer.skipToEndOfCommand();
