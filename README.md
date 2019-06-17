@@ -1,12 +1,12 @@
 # sqldump-to
 [![Build Status](https://travis-ci.org/arjunmehta/sqldump-to.svg?branch=master)](https://travis-ci.org/arjunmehta/sqldump-to)
 
-This stdin stream compatible command line tool takes a SQL dump stream and converts it to newline delimited JSON. **Currently this tool can only process dump files for individual tables.** In the future this module may support other output formats and have additional features ([with your help](https://github.com/arjunmehta/sqldump-to/issues)).
+This stdin stream compatible command line tool takes a SQL dump stream and converts it to newline delimited JSON. In the future this module may support other output formats and have additional features ([with your help](https://github.com/arjunmehta/sqldump-to/issues)).
 
-- Convert SQL table dump to comma-separated JSON for import to BigQuery or other tools.
+- Convert SQL dump to comma-separated JSON for import to BigQuery or other tools.
 - Output JSON schema to file. **[Request export format](https://github.com/arjunmehta/sqldump-to/issues)**
 - Stream-based processor makes efficient use of resources (low memory/disk requirements).
-- Use multiple worker processes to increase performance/consumption.
+- Use multiple worker processes to increase performance/conversion speed.
 - stdin/stdout compatible.
 - Supports MySQL and MariaDB SQL dumpfiles and schema. **[Request dump format](https://github.com/arjunmehta/sqldump-to/issues)**
 
@@ -27,8 +27,8 @@ To use, simply pipe a MySQL compatible database dump to the tool. The schema wil
 cat tablename.sql | sqldump-to
 ```
 ```bash
-# Output directly from database to JSON file
-mysqldump -u user -psecret dbname tablename | sqldump-to > tablename.json
+# Dump directly from mysqldump to JSON file
+mysqldump -u user -psecret dbname | sqldump-to > tablename.json
 ```
 ```bash
 # Track progress from gzipped dump to newline delimited JSON to a file
