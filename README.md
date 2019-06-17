@@ -55,7 +55,7 @@ cat tablename.sql | sqldump-to -d ./output
 ### --write-workers=\<number of workers>, -w
 Adds extra write workers and splits the output into separate files. Only works when writing to disk (ie. when `--dir-output` given).
 
-On most systems, the optimal number of workers is `2`, but you can experiment with different values. Filenames will be `{tablename}_0.json`, `{tablename}_1.json`, etc.
+You probably want to experiment with different values to optimize the speed of processing. Filenames will be `{tablename}_0.json`, `{tablename}_1.json`, etc.
 
 ```bash
 # Use 2 workers to output ./output/tablename_0.json and ./output/tablename_1.json
@@ -65,7 +65,7 @@ cat tablename.sql | sqldump-to -d ./output -w 2
 ### --schema, -s
 Output the detected schema as JSON to a file. Filename will be `{tablename}_schema.json`.
 
-If `output-dir` is not set, the schema file will be written to current directory. Otherwise will be writted to the directory specified in `output-dir`.
+If `output-dir` is not set, the schema file will be written to current directory. Otherwise will be written to the directory specified in `output-dir`.
 
 ```bash
 # Output to stdout
