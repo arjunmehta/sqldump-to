@@ -19,6 +19,7 @@ const {
   schema,
 } = yargs
   .version(packageConfig.version)
+  .alias('version', 'v')
   .help('help')
   .alias('help', 'h')
   .option('dir-output', {
