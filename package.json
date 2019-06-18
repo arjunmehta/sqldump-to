@@ -1,6 +1,6 @@
 {
   "name": "sqldump-to",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.3",
   "description": "Stream SQL dump to newline delimited json",
   "main": "index.js",
   "homepage": "https://github.com/arjunmehta/sqldump-to",
