@@ -27,8 +27,12 @@ To use, simply pipe a MySQL compatible database dump to the tool. The schema wil
 cat tablename.sql | sqldump-to
 ```
 ```bash
-# Dump directly from mysqldump to JSON file
-mysqldump -u user -psecret dbname | sqldump-to > tablename.json
+# Dump table directly using mysqldump to JSON file
+mysqldump -u user -psecret dbname tablename | sqldump-to > tablename.json
+```
+```bash
+# Dump entire database directly using mysqldump to JSON files in output dir
+mysqldump -u user -psecret dbname | sqldump-to -d ./output
 ```
 ```bash
 # Track progress from gzipped dump to newline delimited JSON to a file
