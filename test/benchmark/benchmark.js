@@ -6,9 +6,6 @@ const suite = new Benchmark.Suite();
 
 const fileContent = fs.readFileSync(path.resolve(__dirname, 'fixture.sql'));
 const bufDelimeter = Buffer.from('),(');
-const createTable = Buffer.from('CREATE TABLE ');
-const insertInto = Buffer.from('INSERT INTO ');
-const values = Buffer.from(' VALUES ');
 const doneCommand = Buffer.from(';');
 const bracketOpen = Buffer.from('(');
 const bracketClose = Buffer.from(')');
@@ -24,6 +21,8 @@ const bracketCloseOctet = bracketClose[0];
 const bufDelimeterLength = bufDelimeter.length;
 
 // add tests
+
+/* eslint-disable no-unused-vars */
 suite
   .add('String Split', () => {
     const fileString = fileContent.toString();
