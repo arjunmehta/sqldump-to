@@ -1,7 +1,7 @@
 {
   "name": "sqldump-to",
-  "version": "1.0.0",
-  "description": "Stream sql dump to newline delimited json",
+  "version": "1.0.0-beta.3",
+  "description": "Stream SQL dump to newline delimited json",
   "main": "index.js",
   "homepage": "https://github.com/arjunmehta/sqldump-to",
   "repository": {
@@ -32,5 +32,19 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.3",
     "mocha": "^6.1.4"
-  }
+  },
+  "keywords": [
+    "sql",
+    "dump",
+    "mysql",
+    "newline delimited",
+    "json",
+    "mariadb",
+    "table",
+    "columns",
+    "schema",
+    "stream",
+    "command",
+    "sqldump"
+  ]
 }
