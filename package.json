@@ -12,7 +12,8 @@
     "url": "https://github.com/arjunmehta/sqldump-to/issues"
   },
   "scripts": {
-    "test": "mocha ./test/index"
+    "test-lint": "eslint ./ --ext js",
+    "test": "npm run test-lint && mocha ./test/index"
   },
   "bin": {
     "sqldump-to": "cli.js"
