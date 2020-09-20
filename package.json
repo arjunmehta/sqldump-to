@@ -1,6 +1,6 @@
 {
   "name": "sqldump-to",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.1",
   "description": "Stream SQL dump to newline delimited json",
   "main": "index.js",
   "homepage": "https://github.com/arjunmehta/sqldump-to",
@@ -18,12 +18,12 @@
   "bin": {
     "sqldump-to": "cli.js"
   },
-  "engines": ">=7.5",
+  "engines": ">=10",
   "author": "Arjun Mehta",
   "license": "MIT",
   "dependencies": {
     "json5": "^2.1.0",
-    "mkdirp": "^0.5.1",
+    "mkdirp": "^1.0.4",
     "split2": "^3.1.1",
     "yargs": "^13.2.4"
   },
@@ -32,7 +32,7 @@
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.3",
-    "mocha": "^6.1.4"
+    "mocha": "^8.1.3"
   },
   "keywords": [
     "sql",
