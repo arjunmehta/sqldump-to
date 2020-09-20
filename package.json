@@ -1,6 +1,6 @@
 {
   "name": "sqldump-to",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stream SQL dump to newline delimited json",
   "main": "index.js",
   "homepage": "https://github.com/arjunmehta/sqldump-to",
@@ -18,7 +18,7 @@
   "bin": {
     "sqldump-to": "cli.js"
   },
-  "engines": ">=7.5",
+  "engines": ">=10",
   "author": "Arjun Mehta",
   "license": "MIT",
   "dependencies": {
