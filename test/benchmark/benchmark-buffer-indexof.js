@@ -11,7 +11,6 @@ const fileContentString = fileContent.toString();
 const searchFor = Buffer.from('USE ');
 const searchForString = searchFor.toString();
 
-
 // add tests
 
 console.log({
@@ -36,7 +35,6 @@ suite
   .add('Native String indexOf', () => {
     fileContentString.indexOf(searchForString);
   })
-
 
   // add listeners
   .on('cycle', (event) => {

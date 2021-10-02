@@ -9,7 +9,6 @@ const yargs = require('yargs');
 const SQLConverterStream = require('./lib/sql-converter-stream');
 const packageConfig = require('./package.json');
 
-
 // Read in options
 
 const {
@@ -44,7 +43,6 @@ const {
   })
   .argv;
 
-
 // Initialize main SQL Converter writable stream
 
 const converter = new SQLConverterStream({
@@ -52,7 +50,6 @@ const converter = new SQLConverterStream({
   numWorkers: outputDir ? parseInt(workers || 1, 10) : 1,
   schemaFormat: schema,
 });
-
 
 // Pipe file or stdin
 
