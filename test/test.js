@@ -1,9 +1,7 @@
 const assert = require('assert');
 const { SQLBuffer } = require('../lib/sql-buffer');
 
-
 const COMMAND_EXEC_BUFF = Buffer.from(';');
-
 
 describe('SQLBuffer stream buffer control', () => {
   it('should be an object', () => {
@@ -58,7 +56,6 @@ describe('SQLBuffer stream buffer control', () => {
     assert.equal(buffer.position, buffer.length);
     assert.equal(end[0], COMMAND_EXEC_BUFF[0]);
   });
-
 
   it('should clean buffer', () => {
     const buffer = new SQLBuffer();

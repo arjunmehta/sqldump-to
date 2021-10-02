@@ -12,7 +12,7 @@
     "url": "https://github.com/arjunmehta/sqldump-to/issues"
   },
   "scripts": {
-    "test-lint": "eslint ./ --ext js",
+    "test-lint": "eslint ./ --ext js --fix",
     "test": "npm run test-lint && mocha ./test/index"
   },
   "bin": {

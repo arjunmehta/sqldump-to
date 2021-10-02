@@ -1,9 +1,9 @@
 module.exports = {
   extends: 'airbnb-base',
   env: {
-    mocha: true
+    mocha: true,
   },
   rules: {
-    'no-console': 0
-  }
+    'no-console': 0,
+  },
 };
