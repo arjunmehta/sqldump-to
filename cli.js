@@ -56,7 +56,8 @@ const converter = new SQLConverterStream({
 if (input) {
   const filePath = path.resolve(__dirname, input);
 
-  fs.createReadStream(filePath)
+  fs
+    .createReadStream(filePath)
     .pipe(converter)
     .on('finish', () => {
       process.exit();
